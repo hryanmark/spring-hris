@@ -1,45 +1,95 @@
 <!DOCTYPE html>
-
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
-<title>Employee Management System</title>
+<title>HRIS</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js">
+</script>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-	<div class="container">
-		<h1>Employee Management System</h1>
-		<p>This application list all of employees.</p>
-		<a th:href="@{/showNewEmployeeForm}" class="btn btn-primary btn-sm mb-3">Add
-			Employee</a>
-		<table class="table table-striped">
-			<tr>
-				<th>First Name</th>
-				<th>Last Name</th>
-				<th>Email</th>
-				<th>Actions</th>
-			</tr>
-			<tr th:each="listEmployee : ${listEmployees}">
-				<td th:text="${listEmployee.firstName}"></td>
-				<td th:text="${listEmployee.lastName}"></td>
-				<td th:text="${listEmployee.email}">0</td>
-				<td>
-					<a th:href="@{/showUpdateEmployeeForm/{id}(id=${listEmployee.id})}" class="btn btn-primary">Update</a>
-					<a th:href="@{/deleteEmployee/{id}(id=${listEmployee.id})}" class="btn btn-primary">Delete</a>
-				</td>
-			</tr>
-		</table>
+
+	<div class="wrapper">
+
+		<nav id="sidebar">
+
+			<div class="sidebar-header">
+				<h3>HRIS</h3>
+			</div>
+
+			<ul class="lisst-unstyled components">
+
+				<p>The providers</p>
+				<li class=active>
+					<li>
+						<a th:href="@{/}">Dashboard</a>
+					</li>
+				</li>
+				<li>
+					<a  th:href="@{/employees}">Employee</a>
+				</li>
+				<li>
+					<a href="#pageSubmenu" data-toggle="collapse"
+						aria-expanded="false" class="dropdown-toggle">
+						General Management
+					</a>
+					<ul class="collapse lisst-unstyled" id="pageSubmenu">
+						<li>
+							<a href="#">Department</a>
+						</li>
+						<li>
+							<a href="#">Position</a>
+						</li>
+						<li>
+							<a href="#">Employee Status</a>
+						</li>
+					</ul>
+				</li>
+
+				<li><a href="#">Generate Report</a></li>
+				<li><a href="#">Admin</a></li>
+			</ul>
+			
+		</nav>
+
+		<div id="content">
+			<div class="container">
+				<h1>Dashboard</h1>
+			</div>
+		</div>
+
 	</div>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#sidebarCollapse").on('click', function() {
+				$("#sidebar").toggleClass('active');
+				alert("work");
+			});
+		});
+	</script>
+
 </body>
-</html>
+</hmtl>
