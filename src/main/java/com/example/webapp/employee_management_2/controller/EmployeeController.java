@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.webapp.employee_management_2.model.Department;
 import com.example.webapp.employee_management_2.model.Employee;
+import com.example.webapp.employee_management_2.service.DepartmentService;
 import com.example.webapp.employee_management_2.service.EmployeeService;
 
 @Controller
 public class EmployeeController {
 
-	/*Employee List 
-	 * ADD
-	 * View
-	 * EDit
-	 * Delete*/
 	@Autowired
 	private EmployeeService employeeService;
+	
+	@Autowired
+	private DepartmentService departmentService;
 	
 	//display list of employees
 	@GetMapping("/")
@@ -38,6 +38,8 @@ public class EmployeeController {
 	public String showNewEmployee(Model model) {
 		Employee employee = new Employee();
 		model.addAttribute("employee", employee);
+		Department department =  departmentService.getDepartmentById(6);
+		model.addAttribute("code", department.getCode());
 		return "new_employee";
 	}
 	

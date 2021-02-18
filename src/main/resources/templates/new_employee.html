@@ -67,11 +67,63 @@
 				<h2>Save Employee</h2>
 				
 				<form action="#" th:action="@{/save_employee}" th:object="${employee}" method="POST">
-					<input type="text" th:field="*{firstName}" placeholder="First Name" class="form-control mb-4 col-4">
-					<input type="text" th:field="*{lastName}" placeholder="Last Name" class="form-control mb-4 col-4">
-					<input type="text" th:field="*{email}" placeholder="Email" class="form-control mb-4 col-4">
-					
-					<button type="submit" class="btn btn-info col-2">Save Employee</button>
+					<div class="container">
+					    <div class="row">
+					        <form>
+					           <div class="form-group col-xs-12 col-sm-6">
+						           <label>First Name</label>
+						           <input type="text" th:field="*{firstName}" placeholder="First Name"  class="form-control">
+					           </div>
+					           <div class="form-group col-xs-12 col-sm-6">
+						           <label>Middle Name</label>
+						           <input type="text" th:field="*{middleName}" placeholder="Middle Name" class="form-control">
+					           </div>
+					           <div class="clearfix"></div>
+					           <div class="form-group col-xs-12 col-sm-6">
+						           <label>Last Name</label>
+						           <input type="text" th:field="*{lastName}" placeholder="Last Name" class="form-control">
+					           </div>
+					           <div class="form-group col-xs-12 col-sm-6">
+						           <label>Prefix</label>
+						           <input type="text" th:field="*{prefix}" placeholder="Prefix" class="form-control">
+					           </div>
+					           <div class="form-group col-xs-12 col-sm-6">
+						           <label>Date of Birth</label>
+						           <input type="text" th:field="*{birthDate}" placeholder="Date of Birth" class="form-control">
+					           </div>
+					           <div class="form-group col-xs-12 col-sm-6">
+						           <label>Email</label>
+						           <input type="email" th:field="*{email}" placeholder="Email" class="form-control">
+					           </div>
+					           <div class="clearfix"></div>
+					           <div class="form-group col-xs-12 col-sm-6">
+						           <label>Department</label>
+						           <input type="text" th:field="*{department}" placeholder="Department" class="form-control">
+					           </div>
+					           <div class="form-group col-xs-12 col-sm-6">
+						           <label>Position</label>
+						           <input type="text" th:field="*{position}" placeholder="Position" class="form-control">
+					           </div>
+					           <div class="clearfix"></div>
+					           <div class="form-group col-xs-12 col-sm-6">
+						           
+					           </div>
+					            <div class="clearfix"></div>
+					           <div class="form-group col-xs-12 col-sm-6">
+						           
+					           </div>
+					            <div class="clearfix"></div>
+					           <div class="form-group col-xs-12 col-sm-6">
+						           
+					           </div>
+					           <div class="form-group col-xs-12 col-sm-6">
+						           <button type="submit" class="btn btn-info">Save Employee</button>
+					           </div>
+					     	</form>
+					       	<div class="clearfix">
+					      </div>
+					    </div>
+					</div>
 				</form>
 			</div>
 		</div>
