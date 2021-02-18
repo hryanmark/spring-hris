@@ -34,7 +34,7 @@
 					</li>
 				</li>
 				<li>
-					<a href="#">Employee</a>
+					<a th:href="@{/employees}">Employee</a>
 				</li>
 				<li>
 					<a href="#pageSubmenu" data-toggle="collapse"
@@ -46,7 +46,7 @@
 							<a href="#">Department</a>
 						</li>
 						<li>
-							<a href="#">Position</a>
+							<a th:href="@{/position}">Position</a>
 						</li>
 						<li>
 							<a href="#">Employee Status</a>
@@ -64,7 +64,7 @@
 			<div class="container">
 					<h1>Employee Management System</h1>
 					<p>This application list all of employees.</p>
-					<a th:href="@{/showNewEmployeeForm}" class="btn btn-primary btn-sm mb-3">Add
+					<a th:href="@{/new_employee}" class="btn btn-primary btn-sm mb-3">Add
 						Employee</a>
 					<table class="table table-striped">
 						<tr>
@@ -78,8 +78,8 @@
 							<td th:text="${listEmployee.lastName}"></td>
 							<td th:text="${listEmployee.email}">0</td>
 							<td>
-								<a th:href="@{/showUpdateEmployeeForm/{id}(id=${listEmployee.id})}" class="btn btn-primary">Update</a>
-								<a th:href="@{/deleteEmployee/{id}(id=${listEmployee.id})}" class="btn btn-primary">Delete</a>
+								<a th:href="@{/update_employee/{id}(id=${listEmployee.id})}" class="btn btn-primary">Update</a>
+								<a th:href="@{/delete_employee/{id}(id=${listEmployee.id})}" class="btn btn-primary">Delete</a>
 							</td>
 						</tr>
 					</table>

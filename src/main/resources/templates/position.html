@@ -34,7 +34,7 @@
 					</li>
 				</li>
 				<li>
-					<a  th:href="@{/employees}">Employee</a>
+					<a th:href="@{/employees}">Employee</a>
 				</li>
 				<li>
 					<a href="#pageSubmenu" data-toggle="collapse"
@@ -46,7 +46,7 @@
 							<a href="#">Department</a>
 						</li>
 						<li>
-							<a href="#">Position</a>
+							<a th:href="@{/position}">Position</a>
 						</li>
 						<li>
 							<a href="#">Employee Status</a>
@@ -62,20 +62,29 @@
 
 		<div id="content">
 			<div class="container">
-				<h1>Employee Management System</h1>
-				<hr>
-				<h2>Save Employee</h2>
-				
-				<form action="#" th:action="@{/save_employee}" th:object="${employee}" method="POST">
-					<input type="text" th:field="*{firstName}" placeholder="First Name" class="form-control mb-4 col-4">
-					<input type="text" th:field="*{lastName}" placeholder="Last Name" class="form-control mb-4 col-4">
-					<input type="text" th:field="*{email}" placeholder="Email" class="form-control mb-4 col-4">
-					
-					<button type="submit" class="btn btn-info col-2">Save Employee</button>
-				</form>
-			</div>
+					<h1>Position List</h1>
+					<p></p>
+					<a th:href="@{/new_position}" class="btn btn-primary btn-sm mb-3">Add
+						Position</a>
+					<table class="table table-striped">
+						<tr>
+							<th>Department Code</th>
+							<th>Position Code</th>
+							<th>Description</th>
+							<th>Actions</th>
+						</tr>
+						<tr th:each="listPosition : ${listPositions}">
+							<td th:text="${listPosition.departmentCode}"></td>
+							<td th:text="${listPosition.positionCode}"></td>
+							<td th:text="${listPosition.description}">0</td>
+							<td>
+								<a th:href="@{/update_position/{id}(id=${listPosition.id})}" class="btn btn-primary">Update</a>
+								<a th:href="@{/delete_position/{id}(id=${listPosition.id})}" class="btn btn-primary">Delete</a>
+							</td>
+						</tr>
+					</table>
+				</div>
 		</div>
-
 	</div>
 
 

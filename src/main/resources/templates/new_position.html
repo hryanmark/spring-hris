@@ -66,12 +66,12 @@
 				<hr>
 				<h2>Save Employee</h2>
 				
-				<form action="#" th:action="@{/save_employee}" th:object="${employee}" method="POST">
-					<input type="text" th:field="*{firstName}" placeholder="First Name" class="form-control mb-4 col-4">
-					<input type="text" th:field="*{lastName}" placeholder="Last Name" class="form-control mb-4 col-4">
-					<input type="text" th:field="*{email}" placeholder="Email" class="form-control mb-4 col-4">
+				<form action="#" th:action="@{/save_position}" th:object="${position}" method="POST">
+					<input type="text" th:field="*{departmentCode}" placeholder="Department Code" class="form-control mb-4 col-4">
+					<input type="text" th:field="*{positionCode}" placeholder="Position Code" class="form-control mb-4 col-4">
+					<input type="text" th:field="*{description}" placeholder="Description" class="form-control mb-4 col-4">
 					
-					<button type="submit" class="btn btn-info col-2">Save Employee</button>
+					<button type="submit" class="btn btn-info col-2">Save Position</button>
 				</form>
 			</div>
 		</div>

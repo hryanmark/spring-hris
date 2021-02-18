@@ -14,6 +14,11 @@ import com.example.webapp.employee_management_2.service.EmployeeService;
 @Controller
 public class EmployeeController {
 
+	/*Employee List 
+	 * ADD
+	 * View
+	 * EDit
+	 * Delete*/
 	@Autowired
 	private EmployeeService employeeService;
 	
@@ -29,28 +34,28 @@ public class EmployeeController {
 		return "employee";
 	}
 	
-	@GetMapping("/showNewEmployeeForm")
+	@GetMapping("/new_employee")
 	public String showNewEmployee(Model model) {
 		Employee employee = new Employee();
 		model.addAttribute("employee", employee);
 		return "new_employee";
 	}
 	
-	@PostMapping("/saveEmployee")
+	@PostMapping("/save_employee")
 	public String saveEmployee(@ModelAttribute("employee") Employee employee) {
 		//Save to employee database
 		employeeService.saveEmployee(employee);
 		return "redirect:/employees";
 	}
 	
-	@GetMapping("/showUpdateEmployeeForm/{id}")
+	@GetMapping("/update_employee/{id}")
 	public String showUpdateEmployeeForm(@PathVariable (value = "id") long id, Model model) {
 		Employee employee = employeeService.getEmployeeById(id);
 		model.addAttribute("employee", employee);
 		return "update_employee";
 	}
 	
-	@GetMapping("/deleteEmployee/{id}")
+	@GetMapping("/delete_employee/{id}")
 	public String deleteEmployee(@PathVariable (value = "id") long id) {
 		employeeService.deleteEmployee(id);
 		return "redirect:/employees";
