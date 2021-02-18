@@ -34,7 +34,7 @@
 					</li>
 				</li>
 				<li>
-					<a  th:href="@{/employees}">Employee</a>
+					<a th:href="@{/employees}">Employee</a>
 				</li>
 				<li>
 					<a href="#pageSubmenu" data-toggle="collapse"
@@ -43,13 +43,13 @@
 					</a>
 					<ul class="collapse lisst-unstyled" id="pageSubmenu">
 						<li>
-							<a href="#">Department</a>
+							<a th:href="@{/department}">Department</a>
 						</li>
 						<li>
-							<a href="#">Position</a>
+							<a th:href="@{/position}">Position</a>
 						</li>
 						<li>
-							<a href="#">Employee Status</a>
+							<a th:href="@{/employee_status}">Employee Status</a>
 						</li>
 					</ul>
 				</li>
@@ -62,9 +62,9 @@
 
 		<div id="content">
 			<div class="container">
-				<h1>Employee Management System</h1>
+				<h1>Position List</h1>
 				<hr>
-				<h2>Save Employee</h2>
+				<h2>Save Position</h2>
 				
 				<form action="#" th:action="@{/save_position}" th:object="${position}" method="POST">
 					<input type="text" th:field="*{departmentCode}" placeholder="Department Code" class="form-control mb-4 col-4">

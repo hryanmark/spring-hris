@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.webapp.employee_management_2.model.Employee;
 import com.example.webapp.employee_management_2.model.Position;
 import com.example.webapp.employee_management_2.repository.PositionRepository;
 
@@ -36,7 +35,7 @@ public class PositionServiceImpl implements PositionService{
 			return position;
 		}
 
-		throw new RuntimeException("Employee not found by id :: " + id);
+		throw new RuntimeException("Position not found by id :: " + id);
 	}
 
 	@Override
