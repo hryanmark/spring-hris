@@ -62,7 +62,17 @@
 
 		<div id="content">
 			<div class="container">
-				<h1>Dashboard</h1>
+				<h1>Department List</h1>
+				<hr>
+				<h2>Update Department</h2>
+				
+				<form action="#" th:action="@{/save_department}" th:object="${department}" method="POST">
+					<input type="hidden" th:field="*{id}" class="form-control mb-4 col-4">
+					<input type="text" th:field="*{code}" class="form-control mb-4 col-4">
+					<input type="text" th:field="*{description}" class="form-control mb-4 col-4">
+					
+					<button type="submit" class="btn btn-info col-2">Save Employee</button>
+				</form>
 			</div>
 		</div>
 
