@@ -62,29 +62,19 @@
 
 		<div id="content">
 			<div class="container">
-					<h1>Employee Management System</h1>
-					<p>This application list all of employees.</p>
-					<a th:href="@{/new_employee}" class="btn btn-primary btn-sm mb-3">Add
-						Employee</a>
-					<table class="table table-striped">
-						<tr>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Email</th>
-							<th>Actions</th>
-						</tr>
-						<tr th:each="listEmployee : ${listEmployees}">
-							<td th:text="${listEmployee.firstName}"></td>
-							<td th:text="${listEmployee.lastName}"></td>
-							<td th:text="${listEmployee.email}">0</td>
-							<td>
-								<a th:href="@{/update_employee/{id}(id=${listEmployee.id})}" class="btn btn-primary">Update</a>
-								<a th:href="@{/delete_employee/{id}(id=${listEmployee.id})}" class="btn btn-primary">Delete</a>
-							</td>
-						</tr>
-					</table>
-				</div>
+				<h1>Employee Status List</h1>
+				<hr>
+				<h2>Save Employee Status</h2>
+				
+				<form action="#" th:action="@{/save_employee_status}" th:object="${employeeStatus}" method="POST">
+					<input type="text" th:field="*{code}" placeholder="Code" class="form-control mb-4 col-4">
+					<input type="text" th:field="*{description}" placeholder="Description" class="form-control mb-4 col-4">
+					
+					<button type="submit" class="btn btn-info col-2">Save Employee Status</button>
+				</form>
+			</div>
 		</div>
+
 	</div>
 
 

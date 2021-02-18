@@ -34,7 +34,7 @@
 					</li>
 				</li>
 				<li>
-					<a th:href="@{/employees}">Employee</a>
+					<a  th:href="@{/employees}">Employee</a>
 				</li>
 				<li>
 					<a href="#pageSubmenu" data-toggle="collapse"
@@ -62,29 +62,10 @@
 
 		<div id="content">
 			<div class="container">
-					<h1>Employee Management System</h1>
-					<p>This application list all of employees.</p>
-					<a th:href="@{/new_employee}" class="btn btn-primary btn-sm mb-3">Add
-						Employee</a>
-					<table class="table table-striped">
-						<tr>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Email</th>
-							<th>Actions</th>
-						</tr>
-						<tr th:each="listEmployee : ${listEmployees}">
-							<td th:text="${listEmployee.firstName}"></td>
-							<td th:text="${listEmployee.lastName}"></td>
-							<td th:text="${listEmployee.email}">0</td>
-							<td>
-								<a th:href="@{/update_employee/{id}(id=${listEmployee.id})}" class="btn btn-primary">Update</a>
-								<a th:href="@{/delete_employee/{id}(id=${listEmployee.id})}" class="btn btn-primary">Delete</a>
-							</td>
-						</tr>
-					</table>
-				</div>
+				<h1>Generate Report</h1>
+			</div>
 		</div>
+
 	</div>
 
 
