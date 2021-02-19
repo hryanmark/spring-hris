@@ -99,16 +99,15 @@
 					           <div class="form-group col-xs-12 col-sm-6">
 						           <label>Position</label>
 						           <!-- <input type="text" th:field="*{position}" placeholder="Position" class="form-control"> -->
-						           <select class="custom-select" placeholder="Position">
-								    <option selected>Choose position...</option>
-								    <option value="1">One</option>
-								    <option value="2">Two</option>
-								    <option value="3">Three</option>
-								  </select>
+						           <select th:id="position" th:name="position" class="form-control" th:onchange="populateDepartment()">
+						           		<option></option>
+									    <option th:each="listPosition : ${listPositions}" th:value="${listPosition.positionCode}" 
+									    th:text="${listPosition.description}" th:id="${listPosition.departmentCode}" th:name="${listPosition.departmentCode}"></option>
+									</select>
 					           </div>
 					           <div class="form-group col-xs-12 col-sm-6">
 						           <label>Department</label>
-						           <input type="text" th:field="*{department}" placeholder="Department" class="form-control" disabled>
+						           <input type="text" th:id="department" th:name="department" placeholder="Department" class="form-control" readonly>
 					           </div>
 					           <div class="clearfix"></div>
 					           <div class="form-group col-xs-12 col-sm-6">
@@ -137,7 +136,14 @@
 
 	</div>
 
-
+	<script>
+		function populateDepartment(text){
+			var position = document.getElementById("position");
+			var selected = position.options[position.selectedIndex].id;
+			document.getElementById("department").value=selected
+			
+		}
+	</script>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
