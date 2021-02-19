@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 /**
  * @author r.hiluano
  *
@@ -35,6 +37,7 @@ public class Employee {
 	@Column(name = "prefix")
 	private String prefix;
 	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "birth_date")
 	private LocalDate birthDate;
 	

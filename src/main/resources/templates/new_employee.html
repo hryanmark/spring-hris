@@ -89,7 +89,7 @@
 					           </div>
 					           <div class="form-group col-xs-12 col-sm-6">
 						           <label>Date of Birth</label>
-						           <input type="text" th:field="*{birthDate}" placeholder="Date of Birth" class="form-control">
+						           <input type="date" th:field="*{birthDate}" placeholder="Date of Birth" class="form-control">
 					           </div>
 					           <div class="form-group col-xs-12 col-sm-6">
 						           <label>Email</label>
@@ -97,12 +97,18 @@
 					           </div>
 					           <div class="clearfix"></div>
 					           <div class="form-group col-xs-12 col-sm-6">
-						           <label>Department</label>
-						           <input type="text" th:field="*{department}" placeholder="Department" class="form-control">
+						           <label>Position</label>
+						           <!-- <input type="text" th:field="*{position}" placeholder="Position" class="form-control"> -->
+						           <select class="custom-select" placeholder="Position">
+								    <option selected>Choose position...</option>
+								    <option value="1">One</option>
+								    <option value="2">Two</option>
+								    <option value="3">Three</option>
+								  </select>
 					           </div>
 					           <div class="form-group col-xs-12 col-sm-6">
-						           <label>Position</label>
-						           <input type="text" th:field="*{position}" placeholder="Position" class="form-control">
+						           <label>Department</label>
+						           <input type="text" th:field="*{department}" placeholder="Department" class="form-control" disabled>
 					           </div>
 					           <div class="clearfix"></div>
 					           <div class="form-group col-xs-12 col-sm-6">
@@ -117,7 +123,8 @@
 						           
 					           </div>
 					           <div class="form-group col-xs-12 col-sm-6">
-						           <button type="submit" class="btn btn-info">Save Employee</button>
+						           <button type="submit" class="btn btn-info">Create</button>
+						           <a th:href="@{/employees}"><button type="button" class="btn btn-danger">Cancel</button></a>
 					           </div>
 					     	</form>
 					       	<div class="clearfix">
